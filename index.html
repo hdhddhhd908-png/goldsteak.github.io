@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOLDSTEAK | Официальный сайт</title>
+    <title>GOLDSTEAK | Community</title>
     <style>
-        /* Плавный переход при нажатии на кнопки */
+        /* Плавная прокрутка */
         html { scroll-behavior: smooth; }
 
         body { 
             background-color: #0a0a0a; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            color: #ffffff;
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            color: white;
             margin: 0;
             display: flex;
             min-height: 100vh;
@@ -39,7 +39,7 @@
             text-transform: uppercase;
             letter-spacing: 5px;
             margin-bottom: 50px;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
         }
 
         .nav-btn {
@@ -49,26 +49,23 @@
             text-decoration: none;
             text-align: center;
             font-weight: bold;
-            border-radius: 15px;
-            transition: 0.4s;
+            border-radius: 12px;
+            transition: 0.3s;
             text-transform: uppercase;
             font-size: 0.85em;
-            letter-spacing: 1px;
         }
 
         /* Кнопка Дискорд */
         .btn-discord {
             background-color: #5865F2;
             color: white;
-            box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);
         }
         .btn-discord:hover {
             background-color: #4752c4;
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(88, 101, 242, 0.5);
         }
 
-        /* Кнопка ТАП (Перемещение) */
+        /* Кнопка ТАП */
         .btn-tap {
             background-color: transparent;
             color: #ffd700;
@@ -76,11 +73,11 @@
         }
         .btn-tap:hover {
             background-color: #ffd700;
-            color: #000;
+            color: black;
             transform: translateY(-3px);
         }
 
-        /* --- КОНТЕНТ СПРАВА --- */
+        /* --- ОСНОВНОЙ КОНТЕНТ --- */
         .main-content {
             margin-left: 280px;
             flex-grow: 1;
@@ -91,49 +88,41 @@
             text-align: center;
         }
 
-        .welcome-box {
-            max-width: 800px;
-            margin-bottom: 100px;
-        }
-
-        h1 { font-size: 4em; margin: 0; line-height: 1.1; }
+        h1 { font-size: 4em; margin-bottom: 20px; }
         .gold { color: #ffd700; }
 
-        /* Секция с анкетой */
         .anketa-box {
             background: #151515;
-            padding: 60px 40px;
+            padding: 50px;
             border-radius: 40px;
             border: 1px solid #333;
             width: 100%;
-            max-width: 650px;
-            transition: 0.3s;
+            max-width: 600px;
+            margin-top: 50px;
         }
-        .anketa-box:hover { border-color: #ffd700; }
 
         .big-action-btn {
             background: #ffd700;
-            color: #000;
-            padding: 22px 60px;
-            font-size: 1.5em;
+            color: black;
+            padding: 20px 50px;
+            font-size: 1.4em;
             font-weight: 800;
             text-decoration: none;
-            border-radius: 60px;
+            border-radius: 50px;
             display: inline-block;
-            margin-top: 30px;
-            transition: 0.5s;
+            margin-top: 25px;
+            transition: 0.4s;
             text-transform: uppercase;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
         }
         .big-action-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
         }
 
-        /* Мобильная версия */
+        /* Мобильная адаптация */
         @media (max-width: 850px) {
             body { flex-direction: column; }
-            .sidebar { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 2px solid #ffd700; padding: 20px; }
+            .sidebar { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 2px solid #ffd700; }
             .main-content { margin-left: 0; padding: 40px 20px; }
             h1 { font-size: 2.5em; }
         }
@@ -141,41 +130,38 @@
 </head>
 <body>
 
-    <!-- ЛЕВОЕ МЕНЮ -->
+    <!-- МЕНЮ СЛЕВА -->
     <div class="sidebar">
         <div class="logo">GOLDSTEAK</div>
         
-        <!-- Ссылка на Discord -->
-        <a href="https://discord.gg" target="_blank" class="nav-btn btn-discord">
+        <!-- Кнопка Discord -->
+        <a href="https://discord.gg/p43nyuhBfT" target="_blank" class="nav-btn btn-discord">
             Наш Discord
         </a>
 
         <!-- Кнопка ТАП -->
-        <a href="#anketa-area" class="nav-btn btn-tap">
+        <a href="#anketa-section" class="nav-btn btn-tap">
             Заполнить анкету
         </a>
 
         <div style="margin-top: auto; font-size: 0.7em; color: #444; text-align: center;">
-            © 2024 GOLDSTEAK SYSTEM
+            © 2024 GOLDSTEAK
         </div>
     </div>
 
     <!-- КОНТЕНТ -->
     <div class="main-content">
         
-        <div class="welcome-box">
-            <h1>WELCOME TO <br><span class="gold">GOLDSTEAK</span></h1>
-            <p style="color: #666; font-size: 1.3em; margin-top: 20px;">Пожалуйста, ответьте на наши вопросы.</p>
-        </div>
+        <h1>WELCOME TO <br><span class="gold">GOLDSTEAK</span></h1>
 
         <!-- ЯКОРЬ ДЛЯ ТАПА -->
-        <div id="anketa-area" class="anketa-box">
-            <h2 class="gold" style="font-size: 2em; margin-bottom: 15px;">АНКЕТА</h2>
-            <p style="color: #bbb;">Нажмите на золотую кнопку ниже, чтобы открыть новую анкету GOLDSTEAK.</p>
+        <div id="anketa-section" class="anketa-box">
+            <h2 class="gold">АНКЕТА УЧАСТНИКА</h2>
+            <p>Нажмите ниже, чтобы открыть вопросы в новой вкладке.</p>
             
-            <!-- Твоя новая ссылка на Google Форму -->
+            <!-- Ссылка на Google Форму -->
             <a href="https://google.com" target="_blank" class="big-action-btn">
-                Открыть вопросы
+                Открыть анкету
             </a>
         </div>
 
@@ -183,3 +169,4 @@
 
 </body>
 </html>
+
