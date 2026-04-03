@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOLDSTEAK - Официальная панель</title>
+    <style>
+        /* Плавная прокрутка к разделам */
+        html { scroll-behavior: smooth; }
+
+        body { 
+            background-color: #0d0d0d; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            color: white;
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* --- ЛЕВОЕ МЕНЮ (САЙДБАР) --- */
+        .sidebar {
+            width: 280px;
+            background: #151515;
+            border-right: 2px solid #ffd700;
+            padding: 40px 20px;
+            position: fixed; /* Меню всегда на виду */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            z-index: 100;
+        }
+
+        .logo {
+            color: #ffd700;
+            font-size: 2em;
+            font-weight: 900;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Кнопки в меню */
+        .nav-btn {
+            display: block;
+            padding: 15px;
+            margin-bottom: 15px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 12px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+        /* Кнопка Дискорд */
+        .btn-discord {
+            background-color: #5865F2;
+            color: white;
+        }
+        .btn-discord:hover {
+            background-color: #4752c4;
+            transform: scale(1.02);
+        }
+
+        /* Кнопка ТАП (Анкета) */
+        .btn-tap {
+            background-color: transparent;
+            color: #ffd700;
+            border: 1px solid #ffd700;
+        }
+        .btn-tap:hover {
+            background-color: #ffd700;
+            color: black;
+            transform: scale(1.02);
+        }
+
+        /* --- ОСНОВНОЙ КОНТЕНТ --- */
+        .main-content {
+            margin-left: 280px; /* Отступ под ширину меню */
+            flex-grow: 1;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-section {
+            max-width: 700px;
+        }
+
+        h1 { font-size: 3.5em; margin-bottom: 10px; }
+        .gold-text { color: #ffd700; }
+
+        /* Секция с анкетой */
+        .form-section {
+            margin-top: 100px;
+            padding: 40px;
+            background: #1a1a1a;
+            border-radius: 30px;
+            border: 1px dashed #ffd700;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .main-action-btn {
+            background: #ffd700;
+            color: black;
+            padding: 20px 50px;
+            font-size: 1.4em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+            transition: 0.4s;
+            text-transform: uppercase;
+        }
+
+        .main-action-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+        }
+
+        footer {
+            margin-top: auto;
+            color: #444;
+            font-size: 0.8em;
+        }
+
+        /* Адаптация для телефонов */
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            .sidebar { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 2px solid #ffd700; }
+            .main-content { margin-left: 0; padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ЛЕВОЕ МЕНЮ -->
+    <div class="sidebar">
+        <div class="logo">GOLDSTEAK</div>
+        
+        <!-- Кнопка Discord -->
+        <a href="https://discord.gg" target="_blank" class="nav-btn btn-discord">
+            Войти в Discord
+        </a>
+
+        <!-- Кнопка перехода к вопросам -->
+        <a href="#questions-area" class="nav-btn btn-tap">
+            Заполнить анкету
+        </a>
+
+        <footer style="margin-top: auto; text-align: center;">
+            <p>© 2024 GOLDSTEAK<br>Community System</p>
+        </footer>
+    </div>
+
+    <!-- КОНТЕНТ СПРАВА -->
+    <div class="main-content">
+        
+        <div class="hero-section">
+            <h1>Добро пожаловать в <span class="gold-text">GOLDSTEAK</span></h1>
+            <p style="color: #888; font-size: 1.2em;">Лучшее сообщество начинается здесь. <br> Нажми на кнопку в меню или ниже, чтобы продолжить.</p>
+        </div>
+
+        <!-- РАЗДЕЛ С ВОПРОСАМИ -->
+        <div id="questions-area" class="form-section">
+            <h2 class="gold-text">АНКЕТА УЧАСТНИКА</h2>
+            <p>Чтобы мы могли тебя узнать, ответь на несколько вопросов в нашей форме.</p>
+            <br>
+            
+            <!-- Кнопка открытия формы (Самый надежный вариант) -->
+            <a href="https://forms.gle" target="_blank" class="main-action-btn">
+                ОТКРЫТЬ ВОПРОСЫ
+            </a>
+            
+            <p style="margin-top: 20px; font-size: 0.8em; color: #555;">
+                *Форма откроется в новой вкладке для удобства заполнения.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
